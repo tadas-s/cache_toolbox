@@ -3,14 +3,14 @@
 require 'active_support/cache'
 
 # nodoc #
-module PrefixStore
+module CacheToolbox
   # A utility cache store which writes everything into a parent cache
   # with a fixed key prefix. Aimed to help implementing key-based expiration.
   #
   # = Example use case: flushable http client cache
   #
   #   client = Faraday.new do |builder|
-  #     cache = PrefixStore::Fixed.new(store: Rails.cache, prefix: ENV['CACHE_PR'])
+  #     cache = CacheToolbox::Fixed.new(store: Rails.cache, prefix: ENV['CACHE_PR'])
   #     builder.use :http_cache, store: cache
   #     builder.adapter Faraday.default_adapter
   #   end

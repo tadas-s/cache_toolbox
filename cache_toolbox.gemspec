@@ -3,11 +3,11 @@
 
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'prefix_store/version'
+require 'cache_toolbox/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'prefix_store'
-  spec.version       = PrefixStore::VERSION
+  spec.name          = 'cache_toolbox'
+  spec.version       = CacheToolbox::VERSION
   spec.authors       = ['Tadas Sasnauskas']
   spec.email         = ['tadas@yoyo.lt']
 
@@ -15,7 +15,7 @@ Gem::Specification.new do |spec|
     Rails cache utility store writing to parent cache with a key prefix.
   SUMMARY
   spec.description   = ''
-  spec.homepage      = 'https://github.com/tadas-s/prefix_store'
+  spec.homepage      = 'https://github.com/tadas-s/cache_toolbox'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|

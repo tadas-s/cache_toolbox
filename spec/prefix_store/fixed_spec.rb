@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe PrefixStore::Fixed do
+RSpec.describe CacheToolbox::Fixed do
   let(:null_store) { ActiveSupport::Cache.lookup_store(:null_store) }
   let(:memory_store) { ActiveSupport::Cache.lookup_store(:memory_store) }
 
