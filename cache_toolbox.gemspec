@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['tadas@yoyo.lt']
 
   spec.summary       = <<~SUMMARY
-    Rails cache utility store writing to parent cache with a key prefix.
+    Utility cache store classes for Rails applications.
   SUMMARY
   spec.description   = ''
   spec.homepage      = 'https://github.com/tadas-s/cache_toolbox'
