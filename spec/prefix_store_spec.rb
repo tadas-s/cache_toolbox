@@ -2,8 +2,8 @@
 
 require 'spec_helper'
 
-RSpec.describe PrefixStore do
+RSpec.describe CacheToolbox do
   it 'has a version number' do
-    expect(PrefixStore::VERSION).not_to be nil
+    expect(CacheToolbox::VERSION).not_to be nil
   end
 end

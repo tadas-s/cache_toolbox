@@ -2,5 +2,5 @@
 
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in prefix_store.gemspec
+# Specify your gem's dependencies in cache_toolbox.gemspec
 gemspec
