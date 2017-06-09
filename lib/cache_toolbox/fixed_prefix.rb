@@ -10,7 +10,7 @@ module CacheToolbox
   # = Example use case: flushable http client cache
   #
   #   client = Faraday.new do |builder|
-  #     cache = CacheToolbox::Fixed.new(store: Rails.cache, prefix: ENV['CACHE_PR'])
+  #     cache = CacheToolbox::FixedPrefix.new(store: Rails.cache, prefix: ENV['CACHE_PR'])
   #     builder.use :http_cache, store: cache
   #     builder.adapter Faraday.default_adapter
   #   end
@@ -18,14 +18,19 @@ module CacheToolbox
   # If the app runs on Heroku then cache could be instantly flushed by running:
   #   heroku config:set CACHE_PR=<..random prefix..>
   #
-  class Fixed < ActiveSupport::Cache::Store
+  class FixedPrefix < ::ActiveSupport::Cache::Store
     def initialize(options = {})
       super(options)
 
-      # TODO: fail if unspecified
-      @store = options[:store]
-      # TODO: fail if unspecified
-      @prefix = options[:prefix] + '-'
+      raise ArgumentError, 'No cache store option given.' if
+        options[:store].nil?
+
+      @store = ::ActiveSupport::Cache.lookup_store(options[:store])
+
+      raise ArgumentError, 'No key prefix option given.' if
+        options[:prefix].nil? || options[:prefix].to_s.empty?
+
+      @prefix = options[:prefix].to_s + '-'
     end
 
     private
