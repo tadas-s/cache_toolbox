@@ -31,7 +31,7 @@ RSpec.describe CacheToolbox::FixedPrefix do
         .to raise_exception(ArgumentError, 'No key prefix option given.')
     end
 
-    it 'stringifies symbol key preix' do
+    it 'stringifies symbol key prefix' do
       store = described_class.new(prefix: :pr, store: :memory_store)
 
       expect(store.instance_variable_get(:@prefix)).to eq 'pr-'
