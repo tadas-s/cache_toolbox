@@ -6,15 +6,16 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'cache_toolbox/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'cache_toolbox'
-  spec.version       = CacheToolbox::VERSION
+  spec.name = 'cache_toolbox'
+  spec.version = CacheToolbox::VERSION
   spec.authors       = ['Tadas Sasnauskas']
   spec.email         = ['tadas@yoyo.lt']
-
-  spec.summary       = <<~SUMMARY
+  spec.summary = <<~SUMMARY
     Utility cache store classes for Rails applications.
   SUMMARY
-  spec.description   = ''
+  spec.description = <<~DESCRIPTION
+    Utility cache store classes for Rails applications.
+  DESCRIPTION
   spec.homepage      = 'https://github.com/tadas-s/cache_toolbox'
   spec.license       = 'MIT'
 
